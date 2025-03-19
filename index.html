@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <title>ToDoList By Chinito</title>
+</head>
+<body>
+    <div class="radial-background">
+        <section class="header">
+            <h1>ToDoList</h1>
+        </section>  
+        <div class="grid-container">
+            <!--Formularia Agregar Tarea-->
+
+            <section >
+                <form class="form-main">
+                    <h2 class="sub-title">Ingrese una tarea...</h2>
+                    <div class="input-container">
+                        <input id="task-name" type="text" required>
+                        <label for="input-task" class="label">Ingrese una nueva tarea...</label>
+                        <select class="select-sections" name="sections" id="sections-task" >
+                            <option value="default" id="default">Elija para su seccion de su tarea</option>
+                            
+                        </select>
+                        
+                    </div>
+                    <button class="form-button" id="save-task">Guardar Tarea</button>
+                </form>
+            </section>
+
+            <!--Formulario agregar seccion de tareas-->
+
+            <section>
+                <form class="form-sections">
+                    <h2 class="sub-title">Crear seccion de tareas</h2>
+                    <div class="input-container">
+                        <input id="input-section" type="text" required>
+                        <label for="input-section" class="label">Ingrese una nueva seccion...</label>
+                        <div class="underline"></div>
+                    </div>
+                    <button class="form-button" id="save-section">Guardar Seccion</button>
+
+                </form>
+            </section>
+
+            <!--Contenedor de tareas-->
+
+            <section>
+                <div class="container-task">
+                    <h2 class="container-title">Lista de tareas</h2>
+                    <div id="task-list" class="container-list">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+        
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+*{
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    
+}
+
+.header{
+    text-align: center;
+    font-size: 32px;
+    text-shadow: 3px 1.5px grey;
+}
+.grid-container{
+    position: relative;
+    display: grid;
+
+    border-radius: 10px;
+    grid-template-columns: 30vw auto; 
+    grid-template-rows: 400px 400px;
+    margin: 30px 40px;
+}
+
+
+.grid-container section{
+    margin: 10px;
+}
+.grid-container section:nth-child(2) {
+    grid-row: 2; /* Baja al tercer lugar */
+}
+.grid-container section:nth-child(3){
+    height: 85.5vh;
+}
+.form-main{
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    width: 400px;
+    height: 350px;
+    margin: 10px 50px;
+    padding: 10px  50px;
+    background-color: transparent;
+    border: 2px solid lightblue;
+    border-radius: 5px;
+}
+.form-main .sub-title{
+    text-align: center;
+}
+/*Inputs*/
+.input-container {
+    position: relative;
+    margin: 35px auto;
+    width: 300px;
+  }
+  
+  .input-container input[type="text"] {
+    font-size: 20px;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #3f3f3f;
+    padding: 5px 0;
+    background-color: transparent;
+    outline: none;
+  }
+  
+  .input-container .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #393939;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .input-container input[type="text"]:focus ~ .label,
+  .input-container input[type="text"]:valid ~ .label {
+    top: -20px;
+    font-size: 16px;
+    color: #333;
+  }
+
+    .select-sections{
+    color: #393939;
+    font-size: 16px;
+    margin-top: 30px;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid #3f3f3f;
+    cursor: pointer;
+}
+
+
+  .form-button {
+    width: 200px;
+    background-color: #d4ffc2; /* Color gris */
+    color: #000;
+    opacity: 0.8; /* Texto en blanco */
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    display: block; /* Para que respete el margin auto */
+    margin: 10px auto 0; /* Centrado horizontalmente */
+    border-radius: 5px;
+}
+.form-button:hover {
+    background-color: #b7dfa5; /* Un gris más oscuro al pasar el cursor */
+}
+
+/*SEGUNDO FORMULARIO*/
+
+.form-sections{
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    width: 400px;
+    height: 250px;
+    display: block;
+    margin: 50px 50px;
+    padding: 10px  50px;
+    background-color: transparent;
+    border: 2px solid lightblue;
+    border-radius: 5px;
+}
+/*Contenedor de tareas*/
+
+.container-task{
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    width: 90%;
+    height: 75.7vh;
+    display: block;
+    margin: 10px 20px;
+    padding: 10px  50px;
+    background-color: transparent;
+    border: 2px solid lightblue;
+    border-radius: 5px;
+}
+
+.container-title{
+    margin-top: 10px;
+    font-size: 36px;
+    font-weight: bold;
+}
+.radial-background {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    background-image: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(120, 119, 198, 0.3), rgba(255, 255, 255, 0));
+}
+
+
+
+/*ESTILOS PARA LOS H4*/
+.section-title {
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: space-between; /* Alinea el texto a la izquierda y la imagen a la derecha */
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 5px;
+    width: 300px;
+    cursor: pointer;
+}
+
+.section-title:hover {
+    background-color: #ccc;
+}
+.task-list{
+    margin-top: -15px;
+    position: absolute;
+    width: 250px;
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(0.5rem);
+    transition: all 0.1s cubic-bezier(0.16, 1, 0.5, 1);
+  }
+
+
+ol{
+    width: 300px;
+    list-style-type: none;
+    position: relative;
+    display: block;
+    text-align: left;
+    padding: 5px;
+    
+}
+
+.task-list li {
+    width: 300px; /* Igual que .section-title */
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+    
+    margin-top: -11px;
+    margin-left: -5px;
+    margin-bottom: 5px;
+    box-sizing: border-box; /* Asegura que el padding no aumente el tamaño total */
+    border-top: none;
+}
+
+.task-list li:hover{
+    background-color: #ccc;
+}
+
+.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0rem);
+    z-index: 1;
+  }
+  
+  .arrow {
+    height: 16px;
+    transform: rotate(0deg);
+    transition: transform 0.2s ease;
+}
+
+.arrow.rotate {
+    transform: rotate(180deg);
+}
