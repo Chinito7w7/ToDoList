@@ -1,62 +1,72 @@
-// RECUPERAR DATOS DEL DOM
-const listSection = document.getElementById("sections-task");
+//variables globales
+let sectionCount = 0;
+const maxSection = 15; // Cambiado a 15 porque el contador empieza en 0
+
+//RECUPERAR ELEMENTOS DEL DOM
+//tareas
+const listOptionsSection = document.getElementById("select-option-section");
+const inputTask = document.getElementById("task-name");
+const saveTask = document.getElementById("save-task");
+//secciones
 const inputSection = document.getElementById("input-section");
 const saveSection = document.getElementById("save-section");
 const taskList = document.getElementById("task-list");
-// De las tareas
-const inputTask = document.getElementById("task-name");
-const saveTask = document.getElementById("save-task");
 
-// FUNCIÓN PARA AGREGAR UNA SECCIÓN
+//FUNCION PARA LIMITAR SECCIONES
+function limitSection(){
+    if (sectionCount < maxSection){
+        addSection();
+        sectionCount++;
+    }else{
+        alert("No puedes agregar más secciones, el límite es 16");
+    }
+}
+
+//FUNCION PARA AGREGAR SECCION
 function addSection() {
     if (inputSection.value.trim() === "") {
         alert("El campo se encuentra vacío, ingrese el nombre de su nueva sección");
         return;
     }
 
-    // Normalizar el nombre de la sección para el ID (reemplazar espacios por guiones y convertir a minúsculas)
     const sectionId = inputSection.value.trim().replace(/\s+/g, '-').toLowerCase();
 
-    // Crear el H4 con el nombre de la sección
     const newSection = document.createElement("h4");
     newSection.classList.add("section-title");
-    newSection.setAttribute("id", `section-${sectionId}`); // ID único para cada título de sección
+    newSection.setAttribute("id", `section-${sectionId}`);
 
-    // Crear el nodo de texto con el nombre de la sección
     const sectionText = document.createTextNode(inputSection.value);
 
-    // Crear la imagen de la flecha
     const arrowImg = document.createElement("img");
-    arrowImg.src = "assets/img/arrowdown.png"; // Asegúrate de que la ruta es correcta
+    arrowImg.src = "assets/img/arrowdown.png";
     arrowImg.classList.add("arrow");
-    arrowImg.setAttribute("id", `arrow-${sectionId}`); // ID único para la flecha
+    arrowImg.setAttribute("id", `arrow-${sectionId}`);
 
-    // Agregar el texto y la imagen dentro del H4
     newSection.appendChild(sectionText);
     newSection.appendChild(arrowImg);
 
-    // Crear el OL para las tareas
     const taskListOl = document.createElement("ol");
     taskListOl.classList.add("task-list");
     taskListOl.setAttribute("id", sectionId);
 
-    // Agregar la sección y la lista de tareas al DOM
-    taskList.appendChild(newSection);
-    taskList.appendChild(taskListOl);
+    const sectionContainer = document.createElement("div");
+    sectionContainer.classList.add("section-container");
+    sectionContainer.appendChild(newSection);
+    sectionContainer.appendChild(taskListOl);
 
-    // Agregar la nueva sección como opción en el select
+    taskList.appendChild(sectionContainer);
+
     const newOption = document.createElement("option");
     newOption.textContent = inputSection.value;
     newOption.value = sectionId;
-    listSection.appendChild(newOption);
+    listOptionsSection.appendChild(newOption);
 
-    // Evento para desplegar el menú de la sección
+ 
     newSection.addEventListener("click", function () {
         taskListOl.classList.toggle("show");
         arrowImg.classList.toggle("rotate");
     });
 
-    // Limpiar el input después de agregar la sección
     inputSection.value = "";
 }
 
@@ -67,33 +77,33 @@ function addTask() {
         return;
     }
 
-    if (listSection.value === "0") {
+    if (listOptionsSection.value === "0") {
         alert("Elige una sección para tu tarea");
         return;
     }
 
-    // Obtener la lista de tareas correcta usando el ID del select
-    const selectedTaskList = document.getElementById(listSection.value);
+    const selectedTaskList = document.getElementById(listOptionsSection.value);
 
     if (!selectedTaskList) {
         alert("Error: No se encontró la sección seleccionada.");
         return;
     }
 
-    // Crear la tarea (li)
     const newTask = document.createElement("li");
     newTask.textContent = inputTask.value;
     newTask.classList.add("bx");
 
-    // Agregar la tarea al <ol> correspondiente
-    selectedTaskList.appendChild(newTask);
+    newTask.addEventListener("click", function() {
+        this.classList.toggle("completed");
+    });
 
-    // Limpiar el input de tareas
+    selectedTaskList.appendChild(newTask);
     inputTask.value = "";
 }
 
-// Agregar evento al botón para guardar tareas
+// AGREGAR EVENTO PARA GUARDAR LA TAREA
 saveTask.addEventListener("click", addTask);
+saveSection.addEventListener("click", limitSection);
 
-// Agregar evento al botón para guardar secciones
-saveSection.addEventListener("click", addSection);
+console.log(listOptionsSection.value)
+document.getElementById(listOptionsSection.value);
