@@ -11,58 +11,38 @@
 </head>
 <body>
     <div class="radial-background">
-        <section class="header">
+        <header>
             <h1>ToDoList</h1>
-        </section>  
-        <div class="grid-container">
-            <!--Formularia Agregar Tarea-->
-
-            <section >
-                <form class="form-main">
-                    <h2 class="sub-title">Ingrese una tarea...</h2>
-                    <div class="input-container">
-                        <input id="task-name" type="text" required>
-                        <label for="input-task" class="label">Ingrese una nueva tarea...</label>
-                        <select class="select-sections" name="sections" id="sections-task" >
-                            <option value="default" id="default">Elija para su seccion de su tarea</option>
-                            
-                        </select>
+        </header>
+        <div class="main-container">
+            <section class="container-input-task">
+                <h2>Agregar tarea</h2>
+                <div class="input__container">
+                    <input id="task-name" type="text" required>
+                    <label for="input-task" class="label">Ingrese una nueva tarea...</label>
+                    <select class="select-section" name="sections" id="select-option-section" >
+                        <option value="0" id="default">Elija para su seccion de su tarea</option>
                         
-                    </div>
+                    </select>
                     <button class="form-button" id="save-task">Guardar Tarea</button>
-                </form>
+                </div>
             </section>
-
-            <!--Formulario agregar seccion de tareas-->
-
-            <section>
-                <form class="form-sections">
-                    <h2 class="sub-title">Crear seccion de tareas</h2>
-                    <div class="input-container">
-                        <input id="input-section" type="text" required>
-                        <label for="input-section" class="label">Ingrese una nueva seccion...</label>
-                        <div class="underline"></div>
-                    </div>
+            <section class="container-list-general">
+                <h2>Lista de tareas</h2>
+                <div class="sub_container_list" id="task-list">
+                </div>
+            </section>
+            <section class="container-input-section">
+                <h2>Agregar seccion</h2>
+                <div class="input__container">
+                    <input id="input-section" type="text" required>
+                    <label for="input-section" class="label">Ingrese una nueva seccion...</label>
+                    <div class="underline"></div>
                     <button class="form-button" id="save-section">Guardar Seccion</button>
-
-                </form>
-            </section>
-
-            <!--Contenedor de tareas-->
-
-            <section>
-                <div class="container-task">
-                    <h2 class="container-title">Lista de tareas</h2>
-                    <div id="task-list" class="container-list">
-                        
-                    </div>
                 </div>
             </section>
         </div>
     </div>
-
-        
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
