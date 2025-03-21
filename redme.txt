@@ -1,18 +1,20 @@
-Layout del grid de tareas ✅
-Layout del grid de secciones ✅
-Agregar tareas ✅
-Agregar secciones ✅
-Guardar tareas ✅
-Guardar secciones ✅
-Editar tareas 🔴
-Editar secciones 🔴
-Eliminar tareas 🔴
-Eliminar secciones 🔴
-Ordenar tareas 🔴
-Ordenar secciones 🔴
-Guardar tareas en localStorage 🔴
-Guardar secciones en localStorage 🔴
-Borrar tareas y secciones 🔴
-Ordenar tareas por fecha 🔴
-Ordenar secciones por fecha 🔴
+-Layout del grid de tareas 🟢
+-Layout del grid de secciones 🟢 
+-Agregar tareas 🟢
+-Agregar secciones 🟢
+-Guardar tareas 🟢
+-Guardar secciones 🟢 
+-Desfracmentacion de funciones 🟢 
+-Eliminar tareas 🔴
+-Eliminar secciones 🔴
+-Snackbar ("Tarea Agregada", "Seccion Agregada", "Tarea Editada", "Seccion Editada", 
+-"Tarea Completada", "Seccion Eliminada", "Tarea Eliminada", "Seccion Eliminada") 🟡 
+-Editar tareas 🔴
+-Editar secciones 🔴
+-Ordenar tareas 🔴
+-Ordenar secciones 🔴
+-Guardar tareas en localStorage 🔴
+-Guardar secciones en localStorage 🔴
+-Borrar tareas y secciones 🔴
+
 

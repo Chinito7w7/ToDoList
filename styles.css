@@ -2,7 +2,14 @@
     box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+body
+{
+    margin: 0;
+    padding: 0;
+    max-width: 100vw;
+    overflow: hidden;
 
+}
 header{
     justify-self: center;
 }
@@ -159,6 +166,7 @@ ol.task-list {
 }
 
 .task-list.show {
+   
     visibility: visible;
     opacity: 1;
     transform: translateY(0);
@@ -196,7 +204,7 @@ ol.task-list {
 .task-list li.completed {
     background-color: #d4ffc2;
     text-decoration: line-through;
-    opacity: 0.7;
+    
 }
 
 .task-list li.completed:hover {
@@ -213,8 +221,39 @@ ol.task-list {
     transform: rotate(180deg);
 }
 
+#snackbar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.snackbar-message {
+    background-color: #333;
+    color: white;
+    padding: 16px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.3s ease-in-out;
+    font-size: 0.9rem;
+}
+
+.snackbar-message.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 /* Media Queries */
 @media screen and (max-width: 1024px) {
+    body{
+        overflow: visible;
+    }
     .main-container {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
@@ -231,7 +270,7 @@ ol.task-list {
 
     .sub_container_list {
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(16, auto);
+        grid-template-rows: repeat(16, 50px);
         height: auto;
         max-height: none;
         gap: 15px;
