@@ -59,7 +59,7 @@ section h2{
 }
 
 .input__container input[type="text"] {
-  font-size: 20px;
+  /*font-size: 18px;*/
   width: 100%;
   border: none;
   border-bottom: 2px solid #3f3f3f;
@@ -140,13 +140,91 @@ section h2{
     align-items: center; 
     justify-content: space-between;
     background-color: #e0e0e0;
-    padding: 10px;
+    padding: 10px 15px;
     border-radius: 5px 5px 0 0;
     width: 100%;
     cursor: pointer;
     white-space: nowrap;
-    overflow: hidden;
+    overflow:visible;
     text-overflow: ellipsis;
+}
+
+.section-title:hover{
+    background-color: #ccc;
+}
+
+/* Contenedor de iconos */
+.section-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    
+}
+
+/* Estilos para los iconos */
+.arrow, .options-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.arrow.rotate {
+    transform: rotate(180deg);
+}
+
+.options-icon {
+    opacity: 0.7;
+}
+
+.options-icon:hover {
+    opacity: 1;
+}
+
+/* Menú de opciones */
+.options-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+    min-width: 150px;
+    display: none;
+}
+
+.options-menu.show-menu {
+    display: block;
+}
+
+.option-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.option-item:hover {
+    background-color: #f0f0f0;
+}
+
+.option-item:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+/* Estilos específicos para cada opción */
+.edit-section {
+    color: #2196F3;
+}
+
+.delete-section {
+    color: #f44336;
+}
+
+.move-up, .move-down {
+    color: #4CAF50;
 }
 
 ol.task-list {
@@ -176,21 +254,26 @@ ol.task-list {
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 0.8rem 1rem;
     text-decoration: none;
     color: #000;
     font-weight: 500;
     font-size: 14px;
     cursor: pointer;
-    background-color: #ffffff;
+    background-color: #e4e4e4;
     margin: 0;
     border-radius: 3px;
     box-sizing: border-box;
     transition: all 0.2s ease;
+    position: relative;
+}
+
+.task-list li span {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    position: relative;
+    flex: 1;
 }
 
 .task-list li:first-child {
@@ -204,11 +287,33 @@ ol.task-list {
 .task-list li.completed {
     background-color: #d4ffc2;
     text-decoration: line-through;
+    text-decoration-thickness: 0.2rem;
     
 }
 
 .task-list li.completed:hover {
     background-color: #569b38;
+}
+
+.cross {
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+
+}
+
+.cross:hover {
+    opacity: 1;
+    
+}
+.cross:active{
+    box-shadow: 0 4px 20px rgba(216, 29, 29, 0.5);
+    border-radius: 3px;
+    transition: all 0.2s ease;
+    
 }
 
 /*Imagen de flecha*/
@@ -275,6 +380,10 @@ ol.task-list {
         max-height: none;
         gap: 15px;
         padding: 15px;
+    }
+
+    .task-list{
+        
     }
 
     .section-container {
