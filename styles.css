@@ -98,19 +98,19 @@ section h2{
 /*--BOTONES--*/
 .form-button {
     width: 200px;
-    background-color: #d4ffc2; /* Color gris */
+    background-color: #d4ffc2; 
     color: #000;
-    opacity: 0.8; /* Texto en blanco */
+    opacity: 0.8; 
     border: none;
     padding: 10px;
     font-size: 18px;
     cursor: pointer;
-    display: block; /* Para que respete el margin auto */
-    margin: 20px auto ; /* Centrado horizontalmente */
+    display: block; 
+    margin: 20px auto ; 
     border-radius: 5px;
 }
 .form-button:hover {
-    background-color: #b7dfa5; /* Un gris más oscuro al pasar el cursor */
+    background-color: #b7dfa5; 
 }
 
 /*--LISTA DE TAREAS Y SUS SECCIONES--*/
@@ -153,7 +153,7 @@ section h2{
     background-color: #ccc;
 }
 
-/* Contenedor de iconos */
+
 .section-icons {
     display: flex;
     align-items: center;
@@ -162,7 +162,7 @@ section h2{
     
 }
 
-/* Estilos para los iconos */
+
 .arrow, .options-icon {
     width: 20px;
     height: 20px;
@@ -182,7 +182,7 @@ section h2{
     opacity: 1;
 }
 
-/* Menú de opciones */
+
 .options-menu {
     position: absolute;
     top: 100%;
@@ -316,7 +316,7 @@ ol.task-list {
     
 }
 
-/*Imagen de flecha*/
+
 .arrow {
     height: 16px;
     transform: rotate(0deg);
@@ -354,7 +354,7 @@ ol.task-list {
     transform: translateX(0);
 }
 
-/* Media Queries */
+
 @media screen and (max-width: 1024px) {
     body{
         overflow: visible;
@@ -380,10 +380,6 @@ ol.task-list {
         max-height: none;
         gap: 15px;
         padding: 15px;
-    }
-
-    .task-list{
-        
     }
 
     .section-container {
